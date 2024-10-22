@@ -1,0 +1,44 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "nativeworld:item/spatial_meter"
+	},
+	"overrides": [
+		{
+			"predicate": {
+				"nativeworld:degree": 0.166666
+			}, 
+			"model": "nativeworld:item/spatial_decay_meter/stage1"
+		},
+		{
+			"predicate": {
+				"nativeworld:degree": 0.333333
+			}, 
+			"model": "nativeworld:item/spatial_decay_meter/stage2"
+		},
+		{
+			"predicate": {
+				"nativeworld:degree": 0.5
+			}, 
+			"model": "nativeworld:item/spatial_decay_meter/stage3"
+		},
+		{
+			"predicate": {
+				"nativeworld:degree": 0.666666
+			}, 
+			"model": "nativeworld:item/spatial_decay_meter/stage4"
+		},
+		{
+			"predicate": {
+				"nativeworld:degree": 0.833333
+			}, 
+			"model": "nativeworld:item/spatial_decay_meter/stage5"
+		},
+		{
+			"predicate": {
+				"nativeworld:degree": 1.0
+			}, 
+			"model": "nativeworld:item/spatial_decay_meter/stage6"
+		}
+	]
+}

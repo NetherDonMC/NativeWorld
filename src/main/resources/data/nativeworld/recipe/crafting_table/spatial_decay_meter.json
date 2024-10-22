@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " G ",
+        "GPG",
+        " G "
+    ],
+    "key": {
+        "G": {
+            "tag": "c:ingots/gold"
+        },
+        "P": {
+            "tag": "c:ender_pearls"
+        }
+    },
+    "result": {
+        "id": "nativeworld:spatial_decay_meter",
+        "count": 1
+    }
+}

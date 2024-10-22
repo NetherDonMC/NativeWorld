@@ -1,0 +1,34 @@
+{
+  "itemGroup.nativeworld": "Native World",
+
+  "item.nativeworld.totem_of_birth": "Totem of Birth",
+  "item.nativeworld.totem_of_birth_fragment": "Totem of Birth Fragment",
+  "item.nativeworld.spatial_mix": "Spatial Mix",
+  "item.nativeworld.spatial_decay_meter": "Spatial Decay Meter",
+  "item.minecraft.potion.effect.spatial_resistance": "Potion of Spatial Resistance",
+  "item.minecraft.splash_potion.effect.spatial_resistance": "Splash Potion of Spatial Resistance",
+  "item.minecraft.lingering_potion.effect.spatial_resistance": "Lingering Potion of Spatial Resistance",
+  "item.minecraft.tipped_arrow.effect.spatial_resistance": "Arrow of Spatial Resistance",
+
+  "effect.nativeworld.spatial_decay": "Spatial Decay",
+  "effect.nativeworld.spatial_resistance": "Spatial Resistance",
+
+  "tag.dimension.nativeworld.safe": "Safe Dimensions",
+  "tag.dimension.nativeworld.unsafe": "Unsafe Dimensions",
+
+  "commands.nativeworld.safedimensions.list.success": "%s has %d local safe dimensions: %s",
+  "commands.nativeworld.safedimensions.list.empty": "%s has no local safe dimensions",
+  "commands.nativeworld.safedimensions.add.success": "Dimension %s is now safe for %s",
+  "commands.nativeworld.safedimensions.add.failed": "This dimension is already safe for target",
+  "commands.nativeworld.safedimensions.remove.success": "Dimension %s can now be unsafe for %s",
+  "commands.nativeworld.safedimensions.remove.failed": "This dimension is not safe for target",
+  "commands.nativeworld.safedimensions.clear.success": "Removed %d local safe dimensions from %s",
+  "commands.nativeworld.safedimensions.clear.failed": "Target have no local safe dimensions",
+
+  "commands.nativeworld.spatialdecay.get.success": "Spatial decay value of %s is %d",
+  "commands.nativeworld.spatialdecay.set.success": "Set the spatial decay value of %s to %d",
+
+  "death.attack.nativeworld.spatial_decay": "%s was rejected by the world",
+
+  "tag.item.nativeworld.totem_of_birth_cores": "Totem of Birth Cores"
+}

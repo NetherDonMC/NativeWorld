@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "type": "neoforge:components",
+            "items": "minecraft:potion",
+            "components": {
+                "minecraft:potion_contents": {
+                    "potion": "minecraft:water"
+                }
+            }
+        },
+        {
+            "item": "nativeworld:spatial_mix"
+        }
+    ],
+    "result": {
+        "id": "minecraft:potion",
+        "count": 1,
+        "components": {
+            "minecraft:potion_contents": {
+                "potion": "nativeworld:spatial_resistance"
+            }
+        }
+    }
+}

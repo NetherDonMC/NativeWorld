@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "nativeworld:crafting_table/spatial_decay_meter"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "unsafe_dimension": {
+      "conditions": {},
+      "trigger": "nativeworld:unsafe_dimension"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "unsafe_dimension"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "nativeworld:crafting_table/spatial_decay_meter"
+    ]
+  }
+}

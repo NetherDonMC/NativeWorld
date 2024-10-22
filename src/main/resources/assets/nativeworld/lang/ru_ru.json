@@ -1,0 +1,31 @@
+{
+  "itemGroup.nativeworld": "Native World",
+
+  "item.nativeworld.totem_of_birth": "Тотем рождения",
+  "item.nativeworld.totem_of_birth_fragment": "Фрагмент тотема рождения",
+  "item.nativeworld.spatial_mix": "Пространственная смесь",
+  "item.nativeworld.spatial_decay_meter": "Измеритель пространственного разложения",
+  "item.minecraft.potion.effect.spatial_resistance": "Зелье пространственного сопротивления",
+  "item.minecraft.splash_potion.effect.spatial_resistance": "Взрывное зелье пространственного сопротивления",
+  "item.minecraft.lingering_potion.effect.spatial_resistance": "Туманное зелье пространственного сопротивления",
+  "item.minecraft.tipped_arrow.effect.spatial_resistance": "Стрела пространственного сопротивления",
+
+  "effect.nativeworld.spatial_decay": "Пространственное разложение",
+  "effect.nativeworld.spatial_resistance": "Пространственное сопротивление",
+
+  "commands.nativeworld.safedimensions.list.success": "%s имеет %d локальных безопасных измерений: %s",
+  "commands.nativeworld.safedimensions.list.empty": "%s не имеет локальных безопасных измерений",
+  "commands.nativeworld.safedimensions.add.success": "Измерение %s теперь безопасно для %s",
+  "commands.nativeworld.safedimensions.add.failed": "Данное измерение уже считается безопасным для цели",
+  "commands.nativeworld.safedimensions.remove.success": "Измерение %s теперь может быть небезопасным для %s",
+  "commands.nativeworld.safedimensions.remove.failed": "Данное измерение не безопасно для цели",
+  "commands.nativeworld.safedimensions.clear.success": "Удалено %d локальных безопасных измерений у %s",
+  "commands.nativeworld.safedimensions.clear.failed": "Цель не имеет локальных безопасных измерений",
+
+  "commands.nativeworld.spatialdecay.get.success": "Значение пространственного разложения у %s: %d",
+  "commands.nativeworld.spatialdecay.set.success": "Установлено значение пространственного разложения у %s: %d",
+
+  "death.attack.nativeworld.spatial_decay": "%s был отвергнут миром",
+
+  "tag.item.nativeworld.totem_of_birth_cores": "Ядра тотема возрождения"
+}

@@ -1,0 +1,9 @@
+{
+    "dimensions": [ "minecraft:the_nether" ],
+    "name": {
+        "translate": "dimension.minecraft.the_nether",
+        "color": "dark_red"
+    },
+    "model": "nativeworld:item/totem_of_birth/nether",
+    "particle_color": [0.75, 0.1, 0.1]
+}

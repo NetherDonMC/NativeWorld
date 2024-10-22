@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "cFc",
+      "FCF",
+      "cFc"
+    ],
+    "key": {
+      "F": {
+        "item": "nativeworld:totem_of_birth_fragment"
+      },
+      "C": {
+        "tag": "nativeworld:totem_of_birth_cores"
+      },
+      "c": {
+        "item": "minecraft:clay_ball"
+      }
+    },
+    "result": {
+      "id": "nativeworld:totem_of_birth",
+      "count": 1
+    }
+}

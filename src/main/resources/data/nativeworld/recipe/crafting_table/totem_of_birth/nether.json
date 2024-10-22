@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " F ",
+        "FCF",
+        " F "
+    ],
+    "key": {
+        "F": {
+            "item": "nativeworld:totem_of_birth_fragment"
+        },
+        "C": {
+            "tag": "c:nether_stars"
+        }
+    },
+    "result": {
+        "id": "nativeworld:totem_of_birth",
+        "count": 1,
+        "components": {
+            "nativeworld:totem": "nativeworld:nether"
+        }
+    }
+}

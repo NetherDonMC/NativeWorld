@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "MSM",
+    "SSS"
+  ],
+  "key": {
+    "M": {
+      "item": "nativeworld:spatial_mix"
+    },
+    "S": {
+      "tag": "c:stones"
+    }
+  },
+  "result": {
+    "id": "nativeworld:totem_of_birth_fragment",
+    "count": 1
+  }
+}

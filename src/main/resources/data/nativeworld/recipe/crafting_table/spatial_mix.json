@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "c:ender_pearls"
+        },
+        {
+            "item": "minecraft:sugar"
+        },
+        {
+            "tag": "minecraft:flowers"
+        }
+    ],
+    "result": {
+        "id": "nativeworld:spatial_mix",
+        "count": 1
+    }
+}

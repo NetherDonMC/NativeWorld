@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "ru.netherdon.nativeworld.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+  ],
+  "client": [
+    "ItemRendererMixin",
+    "LivingEntityRendererMixin"
+    ]
+}

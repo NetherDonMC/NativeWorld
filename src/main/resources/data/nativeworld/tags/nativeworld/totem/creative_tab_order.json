@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "nativeworld:overworld",
+    "nativeworld:nether",
+    "nativeworld:end",
+    {
+      "id": "nativeworld:otherside",
+      "required": false
+    },
+    {
+      "id": "nativeworld:the_bumblezone",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+    "entries": [
+        {
+            "enum": "net/minecraft/client/gui/Gui\$HeartType",
+            "name": "NATIVEWORLD_SPATIAL_DECAY",
+            "constructor": "(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)V",
+            "parameters": {
+                "class": "ru/netherdon/nativeworld/registries/NWExtendedEnums",
+                "field": "SPATIAL_DECAY_HEART_TYPE"
+            }
+        }
+    ]
+}

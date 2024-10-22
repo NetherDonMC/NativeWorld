@@ -1,0 +1,17 @@
+{
+	"loader": "neoforge:item_layers",
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "nativeworld:item/spatial_meter",
+		"layer1": "nativeworld:item/spatial_meter_bar_stage3"
+	},
+    "neoforge_data": {
+		"layers": {
+			"1": {
+				"block_light": 9,
+				"sky_light": 9,
+				"ambient_occlusion": false
+			}
+		}
+    }
+}

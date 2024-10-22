@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "nativeworld:crafting_table/spatial_mix"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "thrown_item_picked_up_by_player": {
+      "conditions": {
+        "item": {
+          "items": ["minecraft:ender_pearl"]
+        }
+      },
+      "trigger": "minecraft:thrown_item_picked_up_by_player"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "thrown_item_picked_up_by_player"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "nativeworld:crafting_table/spatial_mix"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+    "neoforge:conditions": [{
+        "type": "neoforge:mod_loaded",
+        "modid": "the_bumblezone"
+    }],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " F ",
+        "FCF",
+        " F "
+    ],
+    "key": {
+        "F": {
+            "item": "nativeworld:totem_of_birth_fragment"
+        },
+        "C": {
+            "item": "the_bumblezone:royal_jelly_bottle"
+        }
+    },
+    "result": {
+        "id": "nativeworld:totem_of_birth",
+        "count": 1,
+        "components": {
+            "nativeworld:totem": "nativeworld:bumblezone"
+        }
+    }
+}

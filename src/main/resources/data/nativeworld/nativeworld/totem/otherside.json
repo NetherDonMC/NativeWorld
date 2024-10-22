@@ -1,0 +1,13 @@
+{
+    "neoforge:conditions": [{
+        "type": "neoforge:mod_loaded",
+        "modid": "deeperdarker"
+    }],
+    "dimensions": [{ "modid": "deeperdarker" }],
+    "name": {
+        "translate": "dimension.deeperdarker.otherside",
+        "color": "dark_aqua"
+    },
+    "model": "nativeworld:item/totem_of_birth/otherside",
+    "particle_color": [0.1, 0.9, 0.65]
+}

@@ -1,0 +1,6 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "nativeworld:item/end_totem_of_birth"
+	}
+}

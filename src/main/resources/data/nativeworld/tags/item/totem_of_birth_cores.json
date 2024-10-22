@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "#c:nether_stars",
+    "minecraft:dragon_egg",
+    {
+      "id": "the_bumblezone:royal_jelly_bottle",
+      "required": false
+    },
+    {
+      "id": "deeperdarker:heart_of_the_deep",
+      "required": false
+    }
+  ]
+}
