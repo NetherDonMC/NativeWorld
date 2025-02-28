@@ -6,6 +6,7 @@
     "dimensions": [{ "modid": "the_bumblezone" }],
     "name": {
         "translate": "dimension.the_bumblezone.the_bumblezone",
+        "fallback": "The Bumblezone",
         "color": "gold"
     },
     "model": "nativeworld:item/totem_of_birth/bumblezone",

@@ -23,9 +23,14 @@ public final class NWPotions
             () -> new Potion(new MobEffectInstance(NWMobEffects.SPATIAL_RESISTANCE, 3000))
         );
 
+    public static final DeferredHolder<Potion, Potion> MEDIUM_SPATIAL_RESISTANCE =
+        REGISTER.register("medium_spatial_resistance",
+            () -> new Potion("spatial_resistance", new MobEffectInstance(NWMobEffects.SPATIAL_RESISTANCE, 6000))
+        );
+
     public static final DeferredHolder<Potion, Potion> LONG_SPATIAL_RESISTANCE =
         REGISTER.register("long_spatial_resistance",
-            () -> new Potion("spatial_resistance", new MobEffectInstance(NWMobEffects.SPATIAL_RESISTANCE, 5400))
+            () -> new Potion("spatial_resistance", new MobEffectInstance(NWMobEffects.SPATIAL_RESISTANCE, 8400))
         );
 
     @SubscribeEvent
@@ -33,6 +38,7 @@ public final class NWPotions
     {
         PotionBrewing.Builder builder = event.getBuilder();
         builder.addStartMix(NWItems.SPATIAL_MIX.get(), SPATIAL_RESISTANCE);
-        builder.addMix(SPATIAL_RESISTANCE, Items.REDSTONE, LONG_SPATIAL_RESISTANCE);
+        builder.addMix(SPATIAL_RESISTANCE, Items.REDSTONE, MEDIUM_SPATIAL_RESISTANCE);
+        builder.addMix(MEDIUM_SPATIAL_RESISTANCE, Items.REDSTONE, LONG_SPATIAL_RESISTANCE);
     }
 }

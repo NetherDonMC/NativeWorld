@@ -43,6 +43,7 @@ public final class NWCreativeTabs
                 acceptPotionStacks(
                     output,
                     NWPotions.SPATIAL_RESISTANCE,
+                    NWPotions.MEDIUM_SPATIAL_RESISTANCE,
                     NWPotions.LONG_SPATIAL_RESISTANCE
                 );
             }).build()

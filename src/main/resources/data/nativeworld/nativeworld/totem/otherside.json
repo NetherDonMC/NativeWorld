@@ -6,6 +6,7 @@
     "dimensions": [{ "modid": "deeperdarker" }],
     "name": {
         "translate": "dimension.deeperdarker.otherside",
+        "fallback": "Otherside",
         "color": "dark_aqua"
     },
     "model": "nativeworld:item/totem_of_birth/otherside",

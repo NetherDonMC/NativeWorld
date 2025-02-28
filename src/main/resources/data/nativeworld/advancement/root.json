@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "id": "nativeworld:totem_of_birth_fragment"
+    },
+    "title": {
+      "translate": "advancements.nativeworld.root.title"
+    },
+    "description": {
+      "translate": "advancements.nativeworld.root.description"
+    },
+    "background": "nativeworld:textures/gui/advancements/backgrounds/spatial.png",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "unsafe_dimension": {
+      "conditions": {},
+      "trigger": "nativeworld:unsafe_dimension"
+    }
+  },
+  "requirements": [[ "unsafe_dimension" ]]
+}

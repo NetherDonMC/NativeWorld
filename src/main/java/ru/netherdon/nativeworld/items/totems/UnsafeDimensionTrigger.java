@@ -5,9 +5,12 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.advancements.critereon.ContextAwarePredicate;
 import net.minecraft.advancements.critereon.EntityPredicate;
 import net.minecraft.advancements.critereon.SimpleCriterionTrigger;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.Level;
+import ru.netherdon.nativeworld.attachments.SpatialDecay;
 import ru.netherdon.nativeworld.misc.DimensionHelper;
+import ru.netherdon.nativeworld.registries.NWAttachmentTypes;
 
 import java.util.Optional;
 
@@ -22,7 +25,7 @@ public class UnsafeDimensionTrigger extends SimpleCriterionTrigger<UnsafeDimensi
     public void trigger(ServerPlayer player)
     {
         this.trigger(player, (instance) ->
-            instance.test(player.level())
+            instance.test(player)
         );
     }
 
@@ -36,9 +39,12 @@ public class UnsafeDimensionTrigger extends SimpleCriterionTrigger<UnsafeDimensi
 
         public static final TriggerInstance EMPTY = new TriggerInstance(Optional.empty());
 
-        public boolean test(Level level)
+        public boolean test(ServerPlayer player)
         {
-            return !DimensionHelper.isSafe(level.dimension(), level.registryAccess());
+            Level level = player.level();
+            SpatialDecay spatialDecay = player.getData(NWAttachmentTypes.SPATIAL_DECAY);
+            return !spatialDecay.isSafeDimension(level.dimension(), level.registryAccess());
+            //return !DimensionHelper.isSafe(level.dimension(), level.registryAccess());
         }
 
         public static TriggerInstance of(ContextAwarePredicate player)

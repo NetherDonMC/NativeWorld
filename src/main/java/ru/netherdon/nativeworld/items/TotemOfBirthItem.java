@@ -19,6 +19,7 @@ import ru.netherdon.nativeworld.items.totems.TotemContent;
 import ru.netherdon.nativeworld.misc.DimensionHelper;
 import ru.netherdon.nativeworld.network.ClientboundTotemEffectPayload;
 import ru.netherdon.nativeworld.registries.NWAttachmentTypes;
+import ru.netherdon.nativeworld.registries.NWCriterionTriggers;
 import ru.netherdon.nativeworld.registries.NWDataComponentTypes;
 
 import java.util.List;
@@ -70,6 +71,7 @@ public class TotemOfBirthItem extends Item
         player.awardStat(Stats.ITEM_USED.get(this));
         if (player instanceof ServerPlayer serverPlayer)
         {
+            NWCriterionTriggers.USED_TOTEM_OF_BIRTH.get().trigger(serverPlayer, stack);
             PacketDistributor.sendToAllPlayers(
                 new ClientboundTotemEffectPayload(
                     stack,
@@ -78,7 +80,7 @@ public class TotemOfBirthItem extends Item
                 )
             );
         }
-        return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
+        return InteractionResultHolder.sidedSuccess(newStack, level.isClientSide);
     }
 
     protected boolean canUseInDimension(TotemContent totemContent, ResourceKey<Level> dimension, HolderLookup.Provider provider)

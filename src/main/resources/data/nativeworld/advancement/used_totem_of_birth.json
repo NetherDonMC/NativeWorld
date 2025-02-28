@@ -1,0 +1,25 @@
+{
+  "parent": "nativeworld:brew_spatial_resistance_potion",
+  "display": {
+    "icon": {
+      "id": "nativeworld:totem_of_birth"
+    },
+    "title": {
+      "translate": "advancements.nativeworld.used_totem_of_birth.title"
+    },
+    "description": {
+      "translate": "advancements.nativeworld.used_totem_of_birth.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "used_totem": {
+      "trigger": "nativeworld:used_totem_of_birth",
+      "conditions": {}
+    }
+  },
+  "requirements": [[ "used_totem" ]]
+}
