@@ -1,5 +1,5 @@
 {
-  "parent": "nativeworld:brew_spatial_resistance_potion",
+  "parent": "nativeworld:spatial_resistance_effect",
   "display": {
     "icon": {
       "id": "nativeworld:totem_of_birth"

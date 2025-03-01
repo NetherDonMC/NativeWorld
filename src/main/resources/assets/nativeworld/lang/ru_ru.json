@@ -33,8 +33,8 @@
   "advancements.nativeworld.root.description": "Мир отвергает вас",
   "advancements.nativeworld.craft_spatial_decay_meter.title": "В ожидании конца",
   "advancements.nativeworld.craft_spatial_decay_meter.description": "Создайте измеритель пространственного разложения",
-  "advancements.nativeworld.brew_spatial_resistance_potion.title": "Борьба за жизнь",
-  "advancements.nativeworld.brew_spatial_resistance_potion.description": "Сварите зелье пространственного сопротивления",
+  "advancements.nativeworld.spatial_resistance_effect.title": "Борьба за жизнь",
+  "advancements.nativeworld.spatial_resistance_effect.description": "Испытайте эффект зелья пространственного сопротивления",
   "advancements.nativeworld.used_totem_of_birth.title": "Второе рождение",
   "advancements.nativeworld.used_totem_of_birth.description": "Используйте тотем рождения"
 }

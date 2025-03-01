@@ -1,0 +1,34 @@
+{
+  "parent": "nativeworld:craft_spatial_decay_meter",
+  "display": {
+    "icon": {
+      "id": "minecraft:potion",
+      "components": {
+        "minecraft:potion_contents": {
+          "potion": "nativeworld:spatial_resistance"
+        }
+      }
+    },
+    "title": {
+      "translate": "advancements.nativeworld.spatial_resistance_effect.title"
+    },
+    "description": {
+      "translate": "advancements.nativeworld.spatial_resistance_effect.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_effect": {
+      "conditions": {
+        "effects": {
+          "nativeworld:spatial_resistance": {}
+        }
+      },
+      "trigger": "minecraft:effects_changed"
+    }
+  },
+  "requirements": [[ "has_effect" ]]
+}

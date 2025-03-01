@@ -33,11 +33,11 @@
   "tag.item.nativeworld.totem_of_birth_cores": "Totem of Birth Cores",
 
   "advancements.nativeworld.root.title": "Spatial Decay",
-  "advancements.nativeworld.root.description": "The world rejects you",
+  "advancements.nativeworld.root.description": "The world pushes you away",
   "advancements.nativeworld.craft_spatial_decay_meter.title": "In Anticipation of the End",
   "advancements.nativeworld.craft_spatial_decay_meter.description": "Create a spatial decay meter",
-  "advancements.nativeworld.brew_spatial_resistance_potion.title": "Survival Struggle",
-  "advancements.nativeworld.brew_spatial_resistance_potion.description": "Brew a spatial resistance potion",
+  "advancements.nativeworld.spatial_resistance_effect.title": "Survival Struggle",
+  "advancements.nativeworld.spatial_resistance_effect.description": "Have the effect of a spatial resistance potion",
   "advancements.nativeworld.used_totem_of_birth.title": "Born Again",
   "advancements.nativeworld.used_totem_of_birth.description": "Use a totem of birth"
 }
