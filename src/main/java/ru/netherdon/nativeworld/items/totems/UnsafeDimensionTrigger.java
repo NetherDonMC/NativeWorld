@@ -5,11 +5,9 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.advancements.critereon.ContextAwarePredicate;
 import net.minecraft.advancements.critereon.EntityPredicate;
 import net.minecraft.advancements.critereon.SimpleCriterionTrigger;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.Level;
 import ru.netherdon.nativeworld.attachments.SpatialDecay;
-import ru.netherdon.nativeworld.misc.DimensionHelper;
 import ru.netherdon.nativeworld.registries.NWAttachmentTypes;
 
 import java.util.Optional;
