@@ -9,6 +9,9 @@
         },
         {
             "tag": "minecraft:flowers"
+        },
+        {
+            "tag": "c:dusts/glowstone"
         }
     ],
     "result": {

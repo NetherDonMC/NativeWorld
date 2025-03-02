@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     "#c:nether_stars",
-    "minecraft:dragon_egg",
+    "minecraft:elytra",
     {
       "id": "the_bumblezone:royal_jelly_bottle",
       "required": false
