@@ -1,5 +1,6 @@
 {
   "itemGroup.nativeworld": "Native World",
+  "fml.menu.mods.info.description.nativeworld": "Мод, усложняющий игровой процесс при помощи новой механики пространственного разложения.",
 
   "item.nativeworld.totem_of_birth": "Тотем рождения",
   "item.nativeworld.totem_of_birth_fragment": "Фрагмент тотема рождения",

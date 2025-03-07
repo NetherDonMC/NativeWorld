@@ -77,7 +77,7 @@ public class NWCommonConfig
 
             this.startDegree = builder
                 .comment(
-                    "Degree of spatial decay with which the mob effect begins to apply",
+                    "Degree of spatial decay with which the effect begins to apply",
                     defaultInfo(ConfigConstants.START_DEGREE)
                 )
                 .defineInRange("startDegree", ConfigConstants.START_DEGREE, 1, Integer.MAX_VALUE);

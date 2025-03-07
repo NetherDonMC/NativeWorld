@@ -72,7 +72,8 @@ public class TotemOfBirthItem extends Item
         if (player instanceof ServerPlayer serverPlayer)
         {
             NWCriterionTriggers.USED_TOTEM_OF_BIRTH.get().trigger(serverPlayer, stack);
-            PacketDistributor.sendToAllPlayers(
+            PacketDistributor.sendToPlayersInDimension(
+                serverPlayer.serverLevel(),
                 new ClientboundTotemEffectPayload(
                     stack,
                     totemContent.getParticleColor(),

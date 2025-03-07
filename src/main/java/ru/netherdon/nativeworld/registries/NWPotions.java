@@ -30,7 +30,7 @@ public final class NWPotions
 
     public static final DeferredHolder<Potion, Potion> LONG_SPATIAL_RESISTANCE =
         REGISTER.register("long_spatial_resistance",
-            () -> new Potion("spatial_resistance", new MobEffectInstance(NWMobEffects.SPATIAL_RESISTANCE, 8400))
+            () -> new Potion("spatial_resistance", new MobEffectInstance(NWMobEffects.SPATIAL_RESISTANCE, 9600))
         );
 
     @SubscribeEvent

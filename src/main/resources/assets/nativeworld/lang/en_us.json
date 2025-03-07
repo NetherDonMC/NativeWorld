@@ -1,5 +1,6 @@
 {
   "itemGroup.nativeworld": "Native World",
+  "fml.menu.mods.info.description.nativeworld": "A mod that makes gameplay more challenging using a new spatial decay mechanic.",
 
   "item.nativeworld.totem_of_birth": "Totem of Birth",
   "item.nativeworld.totem_of_birth_fragment": "Totem of Birth Fragment",
