@@ -41,8 +41,7 @@ public class UnsafeDimensionTrigger extends SimpleCriterionTrigger<UnsafeDimensi
         {
             Level level = player.level();
             SpatialDecay spatialDecay = player.getData(NWAttachmentTypes.SPATIAL_DECAY);
-            return !spatialDecay.isSafeDimension(level.dimension(), level.registryAccess());
-            //return !DimensionHelper.isSafe(level.dimension(), level.registryAccess());
+            return !spatialDecay.isSafeDimension(level);
         }
 
         public static TriggerInstance of(ContextAwarePredicate player)

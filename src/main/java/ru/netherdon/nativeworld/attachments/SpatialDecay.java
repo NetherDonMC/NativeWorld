@@ -78,19 +78,9 @@ public final class SpatialDecay implements INBTSerializable<CompoundTag>
         );
     }
 
-    public boolean isSafeDimension(ResourceKey<Level> dimension, RegistryAccess access)
+    public boolean isSafeDimension(Level level)
     {
-        boolean flag;
-        try
-        {
-            flag = DimensionHelper.isSafe(dimension, access);
-        }
-        catch (IllegalStateException exception)
-        {
-            flag = NWCommonConfig.isDimensionsAreSafe();
-        }
-
-        return flag || localSafeDimensions.contains(dimension);
+        return DimensionHelper.isSafe(level) || localSafeDimensions.contains(level.dimension());
     }
 
     public boolean mayApplyEffect()
@@ -150,9 +140,9 @@ public final class SpatialDecay implements INBTSerializable<CompoundTag>
 
     public int getDegreeIncrement()
     {
-        ResourceKey<Level> dimension = this.player.level().dimension();
+        Level level = this.player.level();
         if (
-            this.isSafeDimension(dimension, this.player.level().registryAccess())
+            this.isSafeDimension(level)
             || this.isPlayerHasImmunity()
         )
         {

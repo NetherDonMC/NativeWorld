@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:overworld",
+    "minecraft:overworld_caves",
+    "the_bumblezone:the_bumblezone"
+  ]
+}

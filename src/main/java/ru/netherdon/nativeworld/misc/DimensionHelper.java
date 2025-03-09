@@ -2,21 +2,29 @@ package ru.netherdon.nativeworld.misc;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.dimension.DimensionType;
 import ru.netherdon.nativeworld.config.NWCommonConfig;
-import ru.netherdon.nativeworld.items.totems.ExtendedDimensionData;
 import ru.netherdon.nativeworld.registries.NWRegistries;
+import ru.netherdon.nativeworld.registries.NWTags;
 
 public final class DimensionHelper
 {
-    public static boolean isSafe(ResourceKey<Level> dimension, RegistryAccess access)
+    public static boolean isSafe(Level level)
     {
-        var extendedInfo = NWRegistries.getExtendedDataOf(dimension, access);
-        return extendedInfo.map(Holder::value)
-            .map(ExtendedDimensionData::isSafe)
-            .orElseGet(NWCommonConfig::isDimensionsAreSafe);
+        Holder<DimensionType> dimensionType = level.dimensionTypeRegistration();
+        if (dimensionType.is(NWTags.DimensionTypes.SAFE))
+        {
+            return true;
+        }
+
+        if (dimensionType.is(NWTags.DimensionTypes.UNSAFE))
+        {
+            return false;
+        }
+
+        return NWCommonConfig.isDimensionsAreSafe();
     }
 
     public static boolean hasLocalTotemFor(ResourceKey<Level> dimension, HolderLookup.Provider provider)
