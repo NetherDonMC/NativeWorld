@@ -16,4 +16,4 @@ The mod is officially available on the following platforms:
 ## Support Me
 If you want to financially support me, you can use the following services:
 
-<a href="https://www.donationalerts.com/r/netherdon"><image src="https://i.imgur.com/kTopml6.png" alt="DonationAlerts" width=35 style="margin-right:5px"></a>
+<a href="https://www.donationalerts.com/r/netherdonmc" target="_blank"><image src="https://i.imgur.com/kTopml6.png" alt="DonationAlerts" width=35 style="margin-right:5px"></a>
