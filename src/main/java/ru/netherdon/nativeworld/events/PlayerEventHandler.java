@@ -2,13 +2,16 @@ package ru.netherdon.nativeworld.events;
 
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerHeartTypeEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+import net.neoforged.neoforge.network.PacketDistributor;
 import ru.netherdon.nativeworld.NativeWorld;
 import ru.netherdon.nativeworld.attachments.SpatialDecay;
+import ru.netherdon.nativeworld.network.ClientboundSpatialDecayDegreePayload;
 import ru.netherdon.nativeworld.registries.NWAttachmentTypes;
 import ru.netherdon.nativeworld.registries.NWCriterionTriggers;
 import ru.netherdon.nativeworld.registries.NWExtendedEnums;
@@ -17,6 +20,20 @@ import ru.netherdon.nativeworld.registries.NWMobEffects;
 @EventBusSubscriber(modid = NativeWorld.ID)
 public final class PlayerEventHandler
 {
+    @SubscribeEvent
+    private static void loggedIn(PlayerEvent.PlayerLoggedInEvent event)
+    {
+        Player player = event.getEntity();
+        Level level = player.level();
+        if (!level.isClientSide)
+        {
+            SpatialDecay spatialDecay = player.getData(NWAttachmentTypes.SPATIAL_DECAY.get());
+            PacketDistributor.sendToAllPlayers(
+                new ClientboundSpatialDecayDegreePayload(player, spatialDecay.getDegree())
+            );
+        }
+    }
+
     @SubscribeEvent
     private static void tick(PlayerTickEvent.Pre event)
     {
