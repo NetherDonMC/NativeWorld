@@ -9,7 +9,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import ru.netherdon.nativeworld.NativeWorld;
 import ru.netherdon.nativeworld.attachments.SpatialDecay;
-import ru.netherdon.nativeworld.config.NWCommonConfig;
+import ru.netherdon.nativeworld.config.NWServerConfig;
 import ru.netherdon.nativeworld.registries.NWAttachmentTypes;
 
 import java.util.function.Function;
@@ -48,7 +48,7 @@ public class SpatialDecayCommand
                 )
             ).then(
                 Commands.literal("add").then(
-                    Commands.argument("value", IntegerArgumentType.integer(0, NWCommonConfig.spatialDecay().maxDegree())).executes(
+                    Commands.argument("value", IntegerArgumentType.integer(1)).executes(
                         (source) -> add(
                             source.getSource(),
                             EntityArgument.getPlayer(source, "target"),

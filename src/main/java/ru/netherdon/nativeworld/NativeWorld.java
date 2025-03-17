@@ -4,7 +4,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import ru.netherdon.nativeworld.config.NWClientConfig;
-import ru.netherdon.nativeworld.config.NWCommonConfig;
+import ru.netherdon.nativeworld.config.NWServerConfig;
 import ru.netherdon.nativeworld.registries.*;
 
 @Mod(NativeWorld.ID)
@@ -23,7 +23,7 @@ public class NativeWorld
         NWPaticleTypes.REGISTER.register(modEventBus);
         NWCriterionTriggers.REGISTER.register(modEventBus);
 
-        NWCommonConfig.register(modContainer);
+        NWServerConfig.register(modContainer);
         NWClientConfig.register(modContainer);
     }
 }

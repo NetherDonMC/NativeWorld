@@ -2,7 +2,6 @@ package ru.netherdon.nativeworld.attachments;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -17,7 +16,7 @@ import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.util.INBTSerializable;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.UnknownNullability;
-import ru.netherdon.nativeworld.config.NWCommonConfig;
+import ru.netherdon.nativeworld.config.NWServerConfig;
 import ru.netherdon.nativeworld.misc.DimensionHelper;
 import ru.netherdon.nativeworld.network.ClientboundSpatialDecayDegreePayload;
 import ru.netherdon.nativeworld.registries.NWMobEffects;
@@ -146,11 +145,11 @@ public final class SpatialDecay implements INBTSerializable<CompoundTag>
             || this.isPlayerHasImmunity()
         )
         {
-            return -NWCommonConfig.spatialDecay().recoveryRate();
+            return -NWServerConfig.spatialDecay().recoveryRate();
         }
 
         return this.player.hasEffect(NWMobEffects.SPATIAL_RESISTANCE) ?
-            0 : NWCommonConfig.spatialDecay().accumulationRate();
+            0 : NWServerConfig.spatialDecay().accumulationRate();
     }
 
     public boolean isPlayerHasImmunity()
@@ -195,21 +194,21 @@ public final class SpatialDecay implements INBTSerializable<CompoundTag>
 
     public static int getMaxDegree()
     {
-        return NWCommonConfig.spatialDecay().maxDegree();
+        return NWServerConfig.spatialDecay().maxDegree();
     }
 
     public static int getStartDegree()
     {
-        return NWCommonConfig.spatialDecay().startDegree();
+        return NWServerConfig.spatialDecay().startDegree();
     }
 
-    public static int getMaxAplifier()
+    public static int getMaxAmplifier()
     {
-        return NWCommonConfig.spatialDecay().maxAmplifier();
+        return NWServerConfig.spatialDecay().maxAmplifier();
     }
 
     public static int getAmplifierInterval()
     {
-        return NWCommonConfig.spatialDecay().amplifierInterval();
+        return NWServerConfig.spatialDecay().amplifierInterval();
     }
 }

@@ -9,16 +9,16 @@ import ru.netherdon.nativeworld.NativeWorld;
 
 import static ru.netherdon.nativeworld.config.ConfigHelper.*;
 
-public class NWCommonConfig
+public class NWServerConfig
 {
-    public static final String FILE_NAME = NativeWorld.ID + "/common.toml";
+    public static final String FILE_NAME = NativeWorld.ID + "/server.toml";
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
-    private static final Pair<NWCommonConfig, ModConfigSpec> PAIR = BUILDER.configure(NWCommonConfig::new);
+    private static final Pair<NWServerConfig, ModConfigSpec> PAIR = BUILDER.configure(NWServerConfig::new);
 
     private final ModConfigSpec.BooleanValue dimensionsAreSafeByDefault;
     private final SpatialDecayEffectConfigData spatialDecayData;
 
-    private NWCommonConfig(ModConfigSpec.Builder builder)
+    private NWServerConfig(ModConfigSpec.Builder builder)
     {
         builder.push("SpatialDecay");
 
@@ -35,16 +35,24 @@ public class NWCommonConfig
     }
 
     public static boolean isDimensionsAreSafe()
-    { return get().dimensionsAreSafeByDefault.get(); }
+    {
+        return get().dimensionsAreSafeByDefault.get();
+    }
 
     public static SpatialDecayEffectConfigData spatialDecay()
-    { return get().spatialDecayData; }
+    {
+        return get().spatialDecayData;
+    }
 
-    public static NWCommonConfig get()
-    { return PAIR.getLeft(); }
+    public static NWServerConfig get()
+    {
+        return PAIR.getLeft();
+    }
 
     public static void register(ModContainer modContainer)
-    { modContainer.registerConfig(ModConfig.Type.COMMON, PAIR.getRight(), FILE_NAME); }
+    {
+        modContainer.registerConfig(ModConfig.Type.SERVER, PAIR.getRight(), FILE_NAME);
+    }
 
     public static class SpatialDecayEffectConfigData
     {
@@ -53,7 +61,6 @@ public class NWCommonConfig
         private final ModConfigSpec.IntValue amplifierInterval;
         private final ModConfigSpec.IntValue accumulationRate;
         private final ModConfigSpec.IntValue recoveryRate;
-        private Integer maxDegree = null;
 
         public SpatialDecayEffectConfigData(ModConfigSpec.Builder builder)
         {
@@ -76,6 +83,7 @@ public class NWCommonConfig
             builder.push("Effect");
 
             this.startDegree = builder
+                .worldRestart()
                 .comment(
                     "Degree of spatial decay with which the effect begins to apply",
                     defaultValueInfo(ConfigConstants.START_DEGREE)
@@ -84,6 +92,7 @@ public class NWCommonConfig
                 .defineInRange("startDegree", ConfigConstants.START_DEGREE, 1, Integer.MAX_VALUE);
 
             this.maxAmplifier = builder
+                .worldRestart()
                 .comment(defaultValueInfo(ConfigConstants.MAX_AMPLIFIER))
                 .translation(NativeWorld.ID + ".configuration.spatial_decay.effect.max_amplifier")
                 .defineInRange(
@@ -94,6 +103,7 @@ public class NWCommonConfig
                 );
 
             this.amplifierInterval = builder
+                .worldRestart()
                 .comment(
                     "Value of the degree of spatial decay for which the effect is amplified",
                     defaultValueInfo(ConfigConstants.AMPLIFIER_INTERVAL)
@@ -105,28 +115,33 @@ public class NWCommonConfig
         }
 
         public int startDegree()
-        { return this.startDegree.get(); }
+        {
+            return this.startDegree.get();
+        }
 
         public int amplifierInterval()
-        { return this.amplifierInterval.get(); }
+        {
+            return this.amplifierInterval.get();
+        }
 
         public int maxAmplifier()
-        { return this.maxAmplifier.get(); }
+        {
+            return this.maxAmplifier.get();
+        }
 
         public int maxDegree()
         {
-            if (this.maxDegree == null)
-            {
-                this.maxDegree = this.startDegree() + this.amplifierInterval() * this.maxAmplifier();
-            }
-
-            return this.maxDegree;
+            return this.startDegree() + this.amplifierInterval() * this.maxAmplifier();
         }
 
         public int accumulationRate()
-        { return this.accumulationRate.get(); }
+        {
+            return this.accumulationRate.get();
+        }
 
         public int recoveryRate()
-        { return this.recoveryRate.get(); }
+        {
+            return this.recoveryRate.get();
+        }
     }
 }

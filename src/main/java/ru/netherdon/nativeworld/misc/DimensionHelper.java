@@ -5,7 +5,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.dimension.DimensionType;
-import ru.netherdon.nativeworld.config.NWCommonConfig;
+import ru.netherdon.nativeworld.config.NWServerConfig;
 import ru.netherdon.nativeworld.registries.NWRegistries;
 import ru.netherdon.nativeworld.registries.NWTags;
 
@@ -24,7 +24,7 @@ public final class DimensionHelper
             return false;
         }
 
-        return NWCommonConfig.isDimensionsAreSafe();
+        return NWServerConfig.isDimensionsAreSafe();
     }
 
     public static boolean hasLocalTotemFor(ResourceKey<Level> dimension, HolderLookup.Provider provider)
