@@ -1,6 +1,7 @@
-package ru.netherdon.nativeworld.events;
+package ru.netherdon.nativeworld.client.events;
 
 import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -10,6 +11,7 @@ import ru.netherdon.nativeworld.compat.OtherModIds;
 
 import static ru.netherdon.nativeworld.misc.ResourceLocationHelper.totemModel;
 
+@OnlyIn(Dist.CLIENT)
 @EventBusSubscriber(value = Dist.CLIENT, modid = NativeWorld.ID, bus = EventBusSubscriber.Bus.MOD)
 public final class ModelEventHandler
 {
