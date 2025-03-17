@@ -1,13 +1,10 @@
 package ru.netherdon.nativeworld.client;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Renderable;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 import ru.netherdon.nativeworld.attachments.SpatialDecay;
@@ -20,21 +17,21 @@ public class SpatialDecayOutline implements Renderable
     private static final ResourceLocation THORNS0_TEXTURE = ResourceLocationHelper.mod("textures/misc/spatial_decay_thorns0.png");
     private static final ResourceLocation THORNS1_TEXTURE = ResourceLocationHelper.mod("textures/misc/spatial_decay_thorns1.png");
 
-    private static final int MAX_FADE = 20;
-    private static final int HURT_ANIMATION_TIME = 8;
-    private static final int MAX_HURT_ANIMATION_TIME = HURT_ANIMATION_TIME * 2;
-    private static final int RARE_HURT_DECAY = 200;
-    private static final int FREQUENTLY_HURT_DECAY = MAX_HURT_ANIMATION_TIME + 5;
+    private static final int MAX_FADE = 10;
+    private static final int STRETCH_ANIMATION_TIME = 8;
+    private static final int MAX_STRETCH_ANIMATION_TIME = STRETCH_ANIMATION_TIME * 2;
+    private static final int STRETCH_DELAY = MAX_STRETCH_ANIMATION_TIME + 5;
 
+    private int lastFadeTick = 0;
     private int fadeTick = 0;
-    private int hurtAnimationTick = 0;
-    private int hurtDecay = 0;
-
-    private int lastDegree = 0;
-    private boolean wasHealthy = true;
+    private int lastStretchTick = 0;
+    private int stretchTick = 0;
+    private int stretchDelay = 0;
 
     public void tick(@NotNull Player player)
     {
+        this.lastFadeTick = this.fadeTick;
+        this.lastStretchTick = this.stretchTick;
         SpatialDecay spatialDecay = player.getData(NWAttachmentTypes.SPATIAL_DECAY);
 
         if (spatialDecay.isPlayerShaking() && !spatialDecay.isPlayerHasImmunity())
@@ -47,32 +44,22 @@ public class SpatialDecayOutline implements Renderable
         }
 
         boolean healthy = !spatialDecay.mayApplyEffect();
-        int degree = spatialDecay.getDegree();
-        boolean worse = degree != 0 && this.lastDegree <= degree;
-        this.lastDegree = degree;
-
-        if (this.hurtDecay > 0)
+        if (this.stretchDelay > 0)
         {
-            this.hurtDecay--;
+            this.stretchDelay--;
         }
 
-        if (!healthy && wasHealthy)
+        if (this.stretchTick >= MAX_STRETCH_ANIMATION_TIME)
         {
-            this.hurtDecay = 0;
-        }
-        this.wasHealthy = healthy;
-
-        if (this.hurtAnimationTick >= MAX_HURT_ANIMATION_TIME)
-        {
-            if (this.hurtDecay <= 0 && worse && NWClientConfig.spatialDecayGui().animationEnabled())
+            if (this.stretchDelay <= 0 && !healthy && NWClientConfig.spatialDecayGui().animationEnabled())
             {
-                this.hurtAnimationTick = 0;
-                this.hurtDecay = healthy ? RARE_HURT_DECAY : FREQUENTLY_HURT_DECAY;
+                this.stretchTick = 0;
+                this.stretchDelay = STRETCH_DELAY;
             }
         }
         else
         {
-            this.hurtAnimationTick++;
+            this.stretchTick++;
         }
     }
 
@@ -82,13 +69,13 @@ public class SpatialDecayOutline implements Renderable
         int width = guiGraphics.guiWidth();
         int height = guiGraphics.guiHeight();
 
-        if (this.fadeTick == 0)
+        if (this.fadeTick == 0 && this.lastFadeTick == 0)
         {
             return;
         }
 
-        float alphaMul = (float)this.fadeTick / MAX_FADE;
-        float scale = (float)Math.abs(this.hurtAnimationTick - HURT_ANIMATION_TIME) / HURT_ANIMATION_TIME;
+        float alphaMul = Mth.lerp(partialTicks, this.fadeTick, this.lastFadeTick) / MAX_FADE;
+        float scale = Math.abs(Mth.lerp(partialTicks, this.stretchTick, this.lastStretchTick) - STRETCH_ANIMATION_TIME) / STRETCH_ANIMATION_TIME;
         float easedScale = (float)Math.pow(1f - scale, 2f);
         int scaledWidth = (int)((float)width * (1f + easedScale));
         int widthDiff = scaledWidth - width;

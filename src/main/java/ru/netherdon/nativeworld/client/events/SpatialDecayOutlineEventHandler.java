@@ -31,7 +31,7 @@ public class SpatialDecayOutlineEventHandler
         GuiGraphics graphics = event.getGuiGraphics();
         Window window = Minecraft.getInstance().getWindow();
 
-        SPATIAL_DECAY_OUTLINE.render(graphics, window.getX(), window.getY(), event.getPartialTick().getRealtimeDeltaTicks());
+        SPATIAL_DECAY_OUTLINE.render(graphics, window.getX(), window.getY(), event.getPartialTick().getGameTimeDeltaTicks());
     }
 
     @SubscribeEvent
