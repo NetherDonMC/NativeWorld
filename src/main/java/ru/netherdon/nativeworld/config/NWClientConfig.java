@@ -51,18 +51,22 @@ public class NWClientConfig
 
             this.enabled = builder
                 .comment(defaultValueInfo(ConfigConstants.SPATIAL_DECAY_GUI_ENABLED))
+                .translation(NativeWorld.ID + ".configuration.gui.spatial_decay.enabled")
                 .define("enabled", ConfigConstants.SPATIAL_DECAY_GUI_ENABLED);
 
             this.animationEnabled = builder
                 .comment(defaultValueInfo(ConfigConstants.SPATIAL_DECAY_GUI_ANIMATION_ENABLED))
+                .translation(NativeWorld.ID + ".configuration.gui.spatial_decay.animation_enabled")
                 .define("animationEnabled", ConfigConstants.SPATIAL_DECAY_GUI_ANIMATION_ENABLED);
 
             this.layer0Opacity = builder
                 .comment(defaultValueInfo(ConfigConstants.SPATIAL_DECAY_GUI_LAYER0_OPACITY))
+                .translation(NativeWorld.ID + ".configuration.gui.spatial_decay.layer0_opacity")
                 .defineInRange("layer0Opacity", ConfigConstants.SPATIAL_DECAY_GUI_LAYER0_OPACITY, 0d, 1d);
 
             this.layer1Opacity = builder
                 .comment(defaultValueInfo(ConfigConstants.SPATIAL_DECAY_GUI_LAYER1_OPACITY))
+                .translation(NativeWorld.ID + ".configuration.gui.spatial_decay.layer1_opacity")
                 .defineInRange("layer1Opacity", ConfigConstants.SPATIAL_DECAY_GUI_LAYER1_OPACITY, 0d, 1d);
 
             builder.pop();

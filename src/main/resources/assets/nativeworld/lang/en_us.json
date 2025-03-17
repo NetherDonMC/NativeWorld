@@ -40,5 +40,26 @@
   "advancements.nativeworld.spatial_resistance_effect.title": "Survival Struggle",
   "advancements.nativeworld.spatial_resistance_effect.description": "Have the effect of a spatial resistance potion",
   "advancements.nativeworld.used_totem_of_birth.title": "Born Again",
-  "advancements.nativeworld.used_totem_of_birth.description": "Use a totem of birth"
+  "advancements.nativeworld.used_totem_of_birth.description": "Use a totem of birth",
+
+  "nativeworld.configuration.GUI": "Interface",
+  "nativeworld.configuration.SpatialDecayOutline": "Spatial Decay Outline",
+  "nativeworld.configuration.gui.spatial_decay.enabled": "Enabled",
+  "nativeworld.configuration.gui.spatial_decay.layer0_opacity": "Layer 0 Opacity",
+  "nativeworld.configuration.gui.spatial_decay.layer1_opacity": "Layer 1 Opacity",
+  "nativeworld.configuration.gui.spatial_decay.animation_enabled": "Animation Enabled",
+  "nativeworld.configuration.SpatialDecay": "Spatial Decay",
+  "nativeworld.configuration.Effect": "Effect",
+  "nativeworld.configuration.spatial_decay.dimensions_are_safe": "Dimensions Are Safe",
+  "nativeworld.configuration.spatial_decay.recovery_rate": "Recovery Rate",
+  "nativeworld.configuration.spatial_decay.accumulation_rate": "Accumulation Rate",
+  "nativeworld.configuration.spatial_decay.effect.start_degree": "Start Degree",
+  "nativeworld.configuration.spatial_decay.effect.max_amplifier": "Max Amplifier",
+  "nativeworld.configuration.spatial_decay.effect.amplification_period": "Amplification Period",
+
+  "nativeworld.configuration.spatial_decay.dimensions_are_safe.tooltip": "If ON, all dimensions that does not have the tags nativeworld:safe or nativeworld:unsafe will be safe. Unsafe otherwise",
+  "nativeworld.configuration.spatial_decay.recovery_rate.tooltip": "Reduction rate of spatial decay in safe dimensions per tick",
+  "nativeworld.configuration.spatial_decay.accumulation_rate.tooltip": "Accumulation rate of spatial decay in unsafe dimensions per tick",
+  "nativeworld.configuration.spatial_decay.effect.start_degree.tooltip": "Degree of spatial decay with which the effect begins to apply",
+  "nativeworld.configuration.spatial_decay.effect.amplification_period.tooltip": "Value of the degree of spatial decay for which the effect is amplified"
 }

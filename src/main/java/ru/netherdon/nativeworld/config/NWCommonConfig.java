@@ -27,6 +27,7 @@ public class NWCommonConfig
                 "If true, all dimensions that does not have the tags nativeworld:safe or nativeworld:unsafe will be safe. Unsafe otherwise.",
                 defaultValueInfo(ConfigConstants.DIMENSION_SAFE_BY_DEFAULT)
             )
+            .translation(NativeWorld.ID + ".configuration.spatial_decay.dimensions_are_safe")
             .define("dimensionsAreSafe", ConfigConstants.DIMENSION_SAFE_BY_DEFAULT);
 
         this.spatialDecayData = new SpatialDecayEffectConfigData(builder);
@@ -61,6 +62,7 @@ public class NWCommonConfig
                     "Accumulation rate of spatial decay in unsafe dimensions per tick",
                     defaultValueInfo(ConfigConstants.ACCUMULATION_RATE)
                 )
+                .translation(NativeWorld.ID + ".configuration.spatial_decay.accumulation_rate")
                 .defineInRange("accumulationRate", ConfigConstants.ACCUMULATION_RATE, 1, Integer.MAX_VALUE);
 
             this.recoveryRate = builder
@@ -68,6 +70,7 @@ public class NWCommonConfig
                     "Reduction rate of spatial decay in safe dimensions per tick",
                     defaultValueInfo(ConfigConstants.RECOVERY_RATE)
                 )
+                .translation(NativeWorld.ID + ".configuration.spatial_decay.recovery_rate")
                 .defineInRange("recoveryRate", ConfigConstants.RECOVERY_RATE, 1, Integer.MAX_VALUE);
 
             builder.push("Effect");
@@ -77,10 +80,12 @@ public class NWCommonConfig
                     "Degree of spatial decay with which the effect begins to apply",
                     defaultValueInfo(ConfigConstants.START_DEGREE)
                 )
+                .translation(NativeWorld.ID + ".configuration.spatial_decay.effect.start_degree")
                 .defineInRange("startDegree", ConfigConstants.START_DEGREE, 1, Integer.MAX_VALUE);
 
             this.maxAmplifier = builder
                 .comment(defaultValueInfo(ConfigConstants.MAX_AMPLIFIER))
+                .translation(NativeWorld.ID + ".configuration.spatial_decay.effect.max_amplifier")
                 .defineInRange(
                     "maxAmplifier",
                     ConfigConstants.MAX_AMPLIFIER,
@@ -93,7 +98,8 @@ public class NWCommonConfig
                     "Value of the degree of spatial decay for which the effect is amplified",
                     defaultValueInfo(ConfigConstants.AMPLIFIER_INTERVAL)
                 )
-                .defineInRange("amplifierInterval", ConfigConstants.AMPLIFIER_INTERVAL, 1, Integer.MAX_VALUE);
+                .translation(NativeWorld.ID + ".configuration.spatial_decay.effect.amplification_period")
+                .defineInRange("amplificationPeriod", ConfigConstants.AMPLIFIER_INTERVAL, 1, Integer.MAX_VALUE);
 
             builder.pop();
         }
