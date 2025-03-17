@@ -3,6 +3,7 @@ package ru.netherdon.nativeworld;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import ru.netherdon.nativeworld.config.NWClientConfig;
 import ru.netherdon.nativeworld.config.NWCommonConfig;
 import ru.netherdon.nativeworld.registries.*;
 
@@ -23,5 +24,6 @@ public class NativeWorld
         NWCriterionTriggers.REGISTER.register(modEventBus);
 
         NWCommonConfig.register(modContainer);
+        NWClientConfig.register(modContainer);
     }
 }

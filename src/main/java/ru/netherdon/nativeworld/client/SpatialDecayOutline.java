@@ -11,6 +11,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 import ru.netherdon.nativeworld.attachments.SpatialDecay;
+import ru.netherdon.nativeworld.config.NWClientConfig;
 import ru.netherdon.nativeworld.misc.ResourceLocationHelper;
 import ru.netherdon.nativeworld.registries.NWAttachmentTypes;
 
@@ -47,10 +48,14 @@ public class SpatialDecayOutline implements Renderable
 
         boolean healthy = !spatialDecay.mayApplyEffect();
         int degree = spatialDecay.getDegree();
-        boolean worse = this.lastDegree < degree;
+        boolean worse = degree != 0 && this.lastDegree <= degree;
         this.lastDegree = degree;
 
-        hurtDecay--;
+        if (this.hurtDecay > 0)
+        {
+            this.hurtDecay--;
+        }
+
         if (!healthy && wasHealthy)
         {
             this.hurtDecay = 0;
@@ -59,7 +64,7 @@ public class SpatialDecayOutline implements Renderable
 
         if (this.hurtAnimationTick >= MAX_HURT_ANIMATION_TIME)
         {
-            if (this.hurtDecay <= 0 && worse)
+            if (this.hurtDecay <= 0 && worse && NWClientConfig.spatialDecayGui().animationEnabled())
             {
                 this.hurtAnimationTick = 0;
                 this.hurtDecay = healthy ? RARE_HURT_DECAY : FREQUENTLY_HURT_DECAY;
@@ -83,16 +88,16 @@ public class SpatialDecayOutline implements Renderable
         }
 
         float alphaMul = (float)this.fadeTick / MAX_FADE;
-        float frame = (float)Math.abs(this.hurtAnimationTick - HURT_ANIMATION_TIME) / HURT_ANIMATION_TIME;
-        float easedFrame = (float)Math.pow(1f - frame, 2f);
-        int scaledWidth = (int)((float)width * (1f + easedFrame));
+        float scale = (float)Math.abs(this.hurtAnimationTick - HURT_ANIMATION_TIME) / HURT_ANIMATION_TIME;
+        float easedScale = (float)Math.pow(1f - scale, 2f);
+        int scaledWidth = (int)((float)width * (1f + easedScale));
         int widthDiff = scaledWidth - width;
 
         RenderSystem.enableBlend();
-        guiGraphics.setColor(1f, 1f, 1f, 0.15f * alphaMul);
+        guiGraphics.setColor(1f, 1f, 1f, NWClientConfig.spatialDecayGui().layer0Opacity() * alphaMul);
         guiGraphics.blit(THORNS0_TEXTURE, 0, 0, 0, 0, scaledWidth, height, scaledWidth, height);
         guiGraphics.blit(THORNS0_TEXTURE, -widthDiff, 0, 0, 0, scaledWidth, height, -scaledWidth, height);
-        guiGraphics.setColor(1f, 1f, 1f, 0.25f * alphaMul);
+        guiGraphics.setColor(1f, 1f, 1f, NWClientConfig.spatialDecayGui().layer1Opacity() * alphaMul);
         guiGraphics.blit(THORNS1_TEXTURE, 0, 0, 0, 0, scaledWidth, height, scaledWidth, height);
         guiGraphics.blit(THORNS1_TEXTURE, -widthDiff, 0, 0, 0, scaledWidth, height, -scaledWidth, height);
         guiGraphics.setColor(1f, 1f, 1f, 1f);

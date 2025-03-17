@@ -12,6 +12,7 @@ import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.client.event.RenderGuiEvent;
 import ru.netherdon.nativeworld.NativeWorld;
 import ru.netherdon.nativeworld.client.SpatialDecayOutline;
+import ru.netherdon.nativeworld.config.NWClientConfig;
 
 @OnlyIn(Dist.CLIENT)
 @EventBusSubscriber(value = Dist.CLIENT, modid = NativeWorld.ID, bus = EventBusSubscriber.Bus.GAME)
@@ -22,7 +23,7 @@ public class SpatialDecayOutlineEventHandler
     @SubscribeEvent
     public static void render(RenderGuiEvent.Pre event)
     {
-        if (Minecraft.getInstance().options.hideGui)
+        if (!NWClientConfig.spatialDecayGui().enabled() || Minecraft.getInstance().options.hideGui)
         {
             return;
         }
@@ -36,6 +37,11 @@ public class SpatialDecayOutlineEventHandler
     @SubscribeEvent
     public static void clientTick(ClientTickEvent.Post event)
     {
+        if (!NWClientConfig.spatialDecayGui().enabled() || Minecraft.getInstance().isPaused())
+        {
+            return;
+        }
+
         Player player = Minecraft.getInstance().player;
         if (player != null)
         {

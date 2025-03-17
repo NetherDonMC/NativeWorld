@@ -7,6 +7,8 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;
 import ru.netherdon.nativeworld.NativeWorld;
 
+import static ru.netherdon.nativeworld.config.ConfigHelper.*;
+
 public class NWCommonConfig
 {
     public static final String FILE_NAME = NativeWorld.ID + "/common.toml";
@@ -19,11 +21,11 @@ public class NWCommonConfig
     private NWCommonConfig(ModConfigSpec.Builder builder)
     {
         builder.push("SpatialDecay");
+
         this.dimensionsAreSafeByDefault = builder
             .comment(
-                "If true, all dimensions that do not have extended",
-                "data will be safe. Unsafe otherwise.",
-                defaultInfo(ConfigConstants.DIMENSION_SAFE_BY_DEFAULT)
+                "If true, all dimensions that does not have the tags nativeworld:safe or nativeworld:unsafe will be safe. Unsafe otherwise.",
+                defaultValueInfo(ConfigConstants.DIMENSION_SAFE_BY_DEFAULT)
             )
             .define("dimensionsAreSafe", ConfigConstants.DIMENSION_SAFE_BY_DEFAULT);
 
@@ -43,11 +45,6 @@ public class NWCommonConfig
     public static void register(ModContainer modContainer)
     { modContainer.registerConfig(ModConfig.Type.COMMON, PAIR.getRight(), FILE_NAME); }
 
-    private static String defaultInfo(Object value)
-    {
-        return "Default: " + value;
-    }
-
     public static class SpatialDecayEffectConfigData
     {
         private final ModConfigSpec.IntValue startDegree;
@@ -62,14 +59,14 @@ public class NWCommonConfig
             this.accumulationRate = builder
                 .comment(
                     "Accumulation rate of spatial decay in unsafe dimensions per tick",
-                    defaultInfo(ConfigConstants.ACCUMULATION_RATE)
+                    defaultValueInfo(ConfigConstants.ACCUMULATION_RATE)
                 )
                 .defineInRange("accumulationRate", ConfigConstants.ACCUMULATION_RATE, 1, Integer.MAX_VALUE);
 
             this.recoveryRate = builder
                 .comment(
                     "Reduction rate of spatial decay in safe dimensions per tick",
-                    defaultInfo(ConfigConstants.RECOVERY_RATE)
+                    defaultValueInfo(ConfigConstants.RECOVERY_RATE)
                 )
                 .defineInRange("recoveryRate", ConfigConstants.RECOVERY_RATE, 1, Integer.MAX_VALUE);
 
@@ -78,12 +75,12 @@ public class NWCommonConfig
             this.startDegree = builder
                 .comment(
                     "Degree of spatial decay with which the effect begins to apply",
-                    defaultInfo(ConfigConstants.START_DEGREE)
+                    defaultValueInfo(ConfigConstants.START_DEGREE)
                 )
                 .defineInRange("startDegree", ConfigConstants.START_DEGREE, 1, Integer.MAX_VALUE);
 
             this.maxAmplifier = builder
-                .comment(defaultInfo(ConfigConstants.MAX_AMPLIFIER))
+                .comment(defaultValueInfo(ConfigConstants.MAX_AMPLIFIER))
                 .defineInRange(
                     "maxAmplifier",
                     ConfigConstants.MAX_AMPLIFIER,
@@ -94,7 +91,7 @@ public class NWCommonConfig
             this.amplifierInterval = builder
                 .comment(
                     "Value of the degree of spatial decay for which the effect is amplified",
-                    defaultInfo(ConfigConstants.AMPLIFIER_INTERVAL)
+                    defaultValueInfo(ConfigConstants.AMPLIFIER_INTERVAL)
                 )
                 .defineInRange("amplifierInterval", ConfigConstants.AMPLIFIER_INTERVAL, 1, Integer.MAX_VALUE);
 
