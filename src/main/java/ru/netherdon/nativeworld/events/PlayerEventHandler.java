@@ -5,17 +5,16 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerHeartTypeEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import ru.netherdon.nativeworld.NativeWorld;
 import ru.netherdon.nativeworld.attachments.SpatialDecay;
+import ru.netherdon.nativeworld.network.ClientboundSpatialDecayStretchingPayload;
 import ru.netherdon.nativeworld.network.ClientboundSpatialDecayDegreePayload;
-import ru.netherdon.nativeworld.registries.NWAttachmentTypes;
-import ru.netherdon.nativeworld.registries.NWCriterionTriggers;
-import ru.netherdon.nativeworld.registries.NWExtendedEnums;
-import ru.netherdon.nativeworld.registries.NWMobEffects;
+import ru.netherdon.nativeworld.registries.*;
 
 @EventBusSubscriber(modid = NativeWorld.ID)
 public final class PlayerEventHandler
@@ -71,6 +70,19 @@ public final class PlayerEventHandler
         if (event.getEntity() instanceof ServerPlayer serverPlayer)
         {
             NWCriterionTriggers.UNSAFE_DIMENSION.get().trigger(serverPlayer);
+        }
+    }
+
+    @SubscribeEvent
+    private static void playerDamaged(LivingDamageEvent.Post event)
+    {
+        if (event.getEntity() instanceof ServerPlayer player && event.getSource().is(NWDamageTypes.SPATIAL_DECAY))
+        {
+            SpatialDecay spatialDecay = player.getData(NWAttachmentTypes.SPATIAL_DECAY);
+            if (spatialDecay.mayApplyEffect())
+            {
+                PacketDistributor.sendToPlayer(player, ClientboundSpatialDecayStretchingPayload.INSTANCE);
+            }
         }
     }
 }

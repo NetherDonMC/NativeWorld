@@ -6,6 +6,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 import ru.netherdon.nativeworld.attachments.SpatialDecay;
+import ru.netherdon.nativeworld.client.events.SpatialDecayOutlineEventHandler;
 import ru.netherdon.nativeworld.client.particles.TotemParticleOption;
 import ru.netherdon.nativeworld.registries.NWAttachmentTypes;
 import ru.netherdon.nativeworld.registries.NWPaticleTypes;
@@ -38,5 +39,10 @@ public final class NWClientPacketHandlers
             SpatialDecay spatialDecay = player.getData(NWAttachmentTypes.SPATIAL_DECAY);
             spatialDecay.setDegree(payload.level());
         }
+    }
+
+    public static void handleSpatialDecayStretching(ClientboundSpatialDecayStretchingPayload payload, IPayloadContext context)
+    {
+        SpatialDecayOutlineEventHandler.playerDamaged();
     }
 }

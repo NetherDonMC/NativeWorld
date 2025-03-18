@@ -25,5 +25,11 @@ public final class NWNetworkHandler
             ClientboundSpatialDecayDegreePayload.STREAM_CODEC,
             ClientboundSpatialDecayDegreePayload::handle
         );
+
+        registrar.playToClient(
+            ClientboundSpatialDecayStretchingPayload.TYPE,
+            ClientboundSpatialDecayStretchingPayload.STREAM_CODEC,
+            ClientboundSpatialDecayStretchingPayload::handle
+        );
     }
 }
