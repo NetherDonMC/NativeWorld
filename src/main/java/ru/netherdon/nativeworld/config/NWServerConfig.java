@@ -7,7 +7,7 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;
 import ru.netherdon.nativeworld.NativeWorld;
 
-import static ru.netherdon.nativeworld.config.ConfigHelper.*;
+import static ru.netherdon.nativeworld.config.ConfigHelper.defaultValueInfo;
 
 public class NWServerConfig
 {

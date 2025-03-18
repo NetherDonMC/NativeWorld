@@ -12,8 +12,8 @@ import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import ru.netherdon.nativeworld.NativeWorld;
 import ru.netherdon.nativeworld.attachments.SpatialDecay;
-import ru.netherdon.nativeworld.network.ClientboundSpatialDecayStretchingPayload;
 import ru.netherdon.nativeworld.network.ClientboundSpatialDecayDegreePayload;
+import ru.netherdon.nativeworld.network.ClientboundSpatialDecayStretchingPayload;
 import ru.netherdon.nativeworld.registries.*;
 
 @EventBusSubscriber(modid = NativeWorld.ID)

@@ -9,7 +9,6 @@ import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 import ru.netherdon.nativeworld.attachments.SpatialDecay;
 import ru.netherdon.nativeworld.config.NWClientConfig;
-import ru.netherdon.nativeworld.config.NWServerConfig;
 import ru.netherdon.nativeworld.misc.ResourceLocationHelper;
 import ru.netherdon.nativeworld.registries.NWAttachmentTypes;
 
