@@ -14,8 +14,8 @@ import ru.netherdon.nativeworld.registries.NWAttachmentTypes;
 
 public class SpatialDecayOutline implements Renderable
 {
-    private static final ResourceLocation THORNS0_TEXTURE = ResourceLocationHelper.mod("textures/misc/spatial_decay_thorns0.png");
-    private static final ResourceLocation THORNS1_TEXTURE = ResourceLocationHelper.mod("textures/misc/spatial_decay_thorns1.png");
+    private static final ResourceLocation THORNS0_TEXTURE = ResourceLocationHelper.mod("textures/misc/spatial_decay_spikes0.png");
+    private static final ResourceLocation THORNS1_TEXTURE = ResourceLocationHelper.mod("textures/misc/spatial_decay_spikes1.png");
 
     private static final int MAX_FADE = 10;
     private static final int STRETCH_ANIMATION_TIME = 5;
