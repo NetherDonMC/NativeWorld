@@ -3,6 +3,9 @@
   "values": [
     "minecraft:overworld",
     "minecraft:overworld_caves",
-    "the_bumblezone:the_bumblezone"
+    {
+      "id": "the_bumblezone:the_bumblezone",
+      "required": false
+    }
   ]
 }
