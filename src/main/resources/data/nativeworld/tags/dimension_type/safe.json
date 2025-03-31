@@ -6,6 +6,10 @@
     {
       "id": "the_bumblezone:the_bumblezone",
       "required": false
+    },
+    {
+      "id": "twilightforest:twilight_forest_type",
+      "required": false
     }
   ]
 }

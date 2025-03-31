@@ -11,6 +11,10 @@
     {
       "id": "nativeworld:the_bumblezone",
       "required": false
+    },
+    {
+      "id": "nativeworld:twilight_forest",
+      "required": false
     }
   ]
 }

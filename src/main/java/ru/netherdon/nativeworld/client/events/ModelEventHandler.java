@@ -23,6 +23,7 @@ public final class ModelEventHandler
         event.register(totemModel("end"));
         registerIfModLoaded(event, OtherModIds.DEEPER_AND_DARKER, "otherside");
         registerIfModLoaded(event, OtherModIds.BUMBLEZONE, "bumblezone");
+        registerIfModLoaded(event, OtherModIds.TWILIGHT_FOREST, "twilight_forest");
     }
 
     private static void registerIfModLoaded(ModelEvent.RegisterAdditional event, String modId, String... totems)
