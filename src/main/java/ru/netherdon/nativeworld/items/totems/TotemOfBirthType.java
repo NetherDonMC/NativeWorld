@@ -24,17 +24,25 @@ import java.util.Optional;
 public record TotemOfBirthType(
     List<DimensionMatcher> matchers,
     Optional<ResourceLocation> model,
-    int particleColor,
+    TotemParticleColor particleColor,
     Component name
 )
 {
-    public static final int DEFAULT_PARTICLE_COLOR = FastColor.ARGB32.colorFromFloat(1f, 0.9f, 0.9f, 0.9f);
+    public static final TotemParticleColor DEFAULT_PARTICLE_COLOR = TotemParticleColor.builder()
+        .add(0xFEC3FD)
+        .add(0xCDC3FE)
+        .add(0xC3FCFE)
+        .add(0xC9FEC3)
+        .add(0xFDFEC3)
+        .add(0xFEE4C3)
+        .add(0xFEC3C3)
+        .build();
 
     public static final Codec<TotemOfBirthType> CODEC = RecordCodecBuilder.create((instance) ->
         instance.group(
             DimensionMatcher.CODEC.listOf().fieldOf("dimensions").forGetter(TotemOfBirthType::matchers),
             ResourceLocation.CODEC.optionalFieldOf("model").forGetter(TotemOfBirthType::model),
-            NWExtraCodecs.RGB_COLOR_CODEC.fieldOf("particle_color").orElse(DEFAULT_PARTICLE_COLOR)
+            TotemParticleColor.CODEC.fieldOf("particle_color").orElse(DEFAULT_PARTICLE_COLOR)
                 .forGetter(TotemOfBirthType::particleColor),
             ComponentSerialization.CODEC.fieldOf("name").forGetter(TotemOfBirthType::name)
         ).apply(instance, TotemOfBirthType::new)

@@ -10,5 +10,11 @@
         "color": "dark_aqua"
     },
     "model": "nativeworld:item/totem_of_birth/otherside",
-    "particle_color": [0.1, 0.9, 0.65]
+    "particle_color": [{
+        "value": "1ae6a6",
+        "weight": 3
+    }, {
+        "value": "4af4de",
+        "weight": 1
+    }]
 }

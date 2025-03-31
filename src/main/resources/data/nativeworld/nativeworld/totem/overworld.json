@@ -5,5 +5,11 @@
         "color": "green"
     },
     "model": "nativeworld:item/totem_of_birth/overworld",
-    "particle_color": [0.5, 0.8, 0.1]
+    "particle_color": [{
+        "value": "26ff00",
+        "weight": 3
+    }, {
+        "value": "9bff65",
+        "weight": 1
+    }]
 }

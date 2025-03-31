@@ -50,7 +50,7 @@ public record TotemContent(Optional<Holder<TotemOfBirthType>> totem, boolean sho
         this(totem, true);
     }
 
-    public int getParticleColor()
+    public TotemParticleColor getParticleColor()
     {
         return this.totem.map((totemIn) -> totemIn.value().particleColor())
             .orElse(TotemOfBirthType.DEFAULT_PARTICLE_COLOR);

@@ -5,5 +5,11 @@
         "color": "dark_red"
     },
     "model": "nativeworld:item/totem_of_birth/nether",
-    "particle_color": [0.75, 0.1, 0.1]
+    "particle_color": [{
+        "value": "ff0000",
+        "weight": 3
+    }, {
+        "value": "ff4d35",
+        "weight": 1
+    }]
 }

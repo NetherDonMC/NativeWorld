@@ -9,9 +9,10 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
+import ru.netherdon.nativeworld.items.totems.TotemParticleColor;
 import ru.netherdon.nativeworld.misc.ResourceLocationHelper;
 
-public record ClientboundTotemEffectPayload(ItemStack stack, int color, int entityId) implements CustomPacketPayload
+public record ClientboundTotemEffectPayload(ItemStack stack, TotemParticleColor color, int entityId) implements CustomPacketPayload
 {
     public static final ResourceLocation ID = ResourceLocationHelper.mod("totem_effect");
     public static final CustomPacketPayload.Type<ClientboundTotemEffectPayload> TYPE = new CustomPacketPayload.Type<>(ID);
@@ -19,7 +20,7 @@ public record ClientboundTotemEffectPayload(ItemStack stack, int color, int enti
     public static final StreamCodec<RegistryFriendlyByteBuf, ClientboundTotemEffectPayload> STREAM_CODEC = StreamCodec.composite(
         ItemStack.STREAM_CODEC,
         ClientboundTotemEffectPayload::stack,
-        ByteBufCodecs.VAR_INT,
+        TotemParticleColor.STREAM_CODEC,
         ClientboundTotemEffectPayload::color,
         ByteBufCodecs.VAR_INT,
         ClientboundTotemEffectPayload::entityId,
