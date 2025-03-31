@@ -11,8 +11,6 @@ import ru.netherdon.nativeworld.registries.NWDamageSources;
 
 public class SpatialDecayMobEffect extends MobEffect
 {
-    public static final float MAX_DAMAGE_AMOUNT = 5f;
-
     public SpatialDecayMobEffect(MobEffectCategory category, int color)
     {
         super(category, color);
@@ -24,8 +22,12 @@ public class SpatialDecayMobEffect extends MobEffect
         Registry<DamageType> damageTypes = livingEntity.level().registryAccess()
             .registryOrThrow(Registries.DAMAGE_TYPE);
         DamageSource damageSource = NWDamageSources.spatialDecay(damageTypes);
-        float damageAmount = Math.min(MAX_DAMAGE_AMOUNT, 2f + amplifier * 1f);
-        livingEntity.hurt(damageSource, damageAmount);
+
+        float damage = amplifier <= 3
+            ? 2f + amplifier * 1f
+            : 5f + (amplifier - 3) * 0.5f;
+
+        livingEntity.hurt(damageSource, damage);
         return true;
     }
 
