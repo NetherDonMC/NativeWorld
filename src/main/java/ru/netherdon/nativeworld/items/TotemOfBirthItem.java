@@ -41,8 +41,8 @@ public class TotemOfBirthItem extends Item
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag)
     {
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-        TotemContent totemContent = stack.get(NWDataComponentTypes.TOTEM);
-        if (totemContent != null)
+        TotemContent totemContent = stack.getOrDefault(NWDataComponentTypes.TOTEM, TotemContent.EMPTY);
+        if (totemContent.totem().isPresent())
         {
             totemContent.addToTooltip(context, tooltipComponents::add, tooltipFlag);
         }
