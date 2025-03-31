@@ -1,5 +1,6 @@
 package ru.netherdon.nativeworld.items;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
@@ -14,6 +15,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.Nullable;
+import ru.netherdon.nativeworld.NativeWorld;
 import ru.netherdon.nativeworld.attachments.SpatialDecay;
 import ru.netherdon.nativeworld.items.totems.TotemContent;
 import ru.netherdon.nativeworld.misc.DimensionHelper;
@@ -27,6 +29,8 @@ import java.util.List;
 public class TotemOfBirthItem extends Item
 {
     public static final int COOLDOWN = 40;
+    private static final Component UNEXPLORED = Component.translatable("item." + NativeWorld.ID + ".totem_of_birth.unexplored")
+        .withStyle(ChatFormatting.GRAY);
 
     public TotemOfBirthItem(Properties properties)
     {
@@ -41,6 +45,10 @@ public class TotemOfBirthItem extends Item
         if (totemContent != null)
         {
             totemContent.addToTooltip(context, tooltipComponents::add, tooltipFlag);
+        }
+        else
+        {
+            tooltipComponents.add(UNEXPLORED);
         }
     }
 
