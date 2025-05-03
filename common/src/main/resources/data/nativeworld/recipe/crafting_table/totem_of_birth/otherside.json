@@ -1,0 +1,31 @@
+{
+    "neoforge:conditions": [{
+        "type": "neoforge:mod_loaded",
+        "modid": "deeperdarker"
+    }],
+    "fabric:load_conditions": [{
+        "condition": "fabric:all_mods_loaded",
+        "values": ["deeperdarker"]
+    }],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " F ",
+        "FСF",
+        " F "
+    ],
+    "key": {
+        "F": {
+            "item": "nativeworld:totem_of_birth_fragment"
+        },
+        "С": {
+            "item": "deeperdarker:heart_of_the_deep"
+        }
+    },
+    "result": {
+        "id": "nativeworld:totem_of_birth",
+        "count": 1,
+        "components": {
+            "nativeworld:totem": "nativeworld:otherside"
+        }
+    }
+}

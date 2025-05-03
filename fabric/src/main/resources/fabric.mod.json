@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "${id}",
+  "version": "${version}",
+  "name": "${name}",
+  "description": "${description}",
+  "authors": [
+    "${author}"
+  ],
+  "contact": {
+    "homepage": ""
+  },
+  "license": "${license}",
+  "icon": "assets/nativeworld/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "ru.netherdon.nativeworld.fabric.NativeWorldFabric"
+    ],
+    "client": [
+      "ru.netherdon.nativeworld.fabric.client.NativeWorldFabricClient"
+    ],
+    "modmenu": [
+      "ru.netherdon.nativeworld.fabric.compat.modmenu.NWModMenuPlugin"
+    ],
+    "jei_mod_plugin": [
+      "ru.netherdon.nativeworld.compat.jei.NWJeiPlugin"
+    ],
+    "emi": [
+      "ru.netherdon.nativeworld.compat.emi.NWEmiPlugin"
+    ]
+  },
+  "mixins": [
+    "${id}.mixins.json",
+    "${id}.fabric.mixins.json"
+  ],
+  "accessWidener": "${id}.accesswidener",
+  "depends": {
+    "fabric-registry-sync-v0": "*",
+    "fabric-resource-conditions-api-v1": "*",
+    "fabricloader": ">=0.16.14",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*",
+    "forgeconfigapiport": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

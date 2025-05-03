@@ -1,0 +1,16 @@
+{
+    "dimensions": [ "minecraft:overworld" ],
+    "name": {
+        "translate": "dimension.minecraft.overworld",
+        "fallback": "Overworld",
+        "color": "green"
+    },
+    "model": "nativeworld:item/totem_of_birth/overworld",
+    "particle_color": [{
+        "value": "26ff00",
+        "weight": 3
+    }, {
+        "value": "9bff65",
+        "weight": 1
+    }]
+}

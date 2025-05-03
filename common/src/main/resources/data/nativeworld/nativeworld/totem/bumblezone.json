@@ -1,0 +1,24 @@
+{
+    "neoforge:conditions": [{
+        "type": "neoforge:mod_loaded",
+        "modid": "the_bumblezone"
+    }],
+    "fabric:load_conditions": [{
+        "condition": "fabric:all_mods_loaded",
+        "values": ["the_bumblezone"]
+    }],
+    "dimensions": [{ "modid": "the_bumblezone" }],
+    "name": {
+        "translate": "dimension.the_bumblezone.the_bumblezone",
+        "fallback": "The Bumblezone",
+        "color": "gold"
+    },
+    "model": "nativeworld:item/totem_of_birth/bumblezone",
+    "particle_color": [{
+        "value": "ff9c00",
+        "weight": 3
+    }, {
+        "value": "e8d152",
+        "weight": 1
+    }]
+}

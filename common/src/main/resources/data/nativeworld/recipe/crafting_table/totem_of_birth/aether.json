@@ -1,0 +1,31 @@
+{
+    "neoforge:conditions": [{
+        "type": "neoforge:mod_loaded",
+        "modid": "aether"
+    }],
+    "fabric:load_conditions": [{
+        "condition": "fabric:all_mods_loaded",
+        "values": ["aether"]
+    }],
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+		" F ",
+		"FKF",
+		" F "
+    ],
+    "key": {
+		"F": {
+			"item": "nativeworld:totem_of_birth_fragment"
+		},
+        "K": {
+			"tag": "aether:dungeon_keys"
+		}
+    },
+    "result": {
+		"id": "nativeworld:totem_of_birth",
+		"count": 1,
+        "components": {
+            "nativeworld:totem": "nativeworld:aether"
+        }
+    }
+}

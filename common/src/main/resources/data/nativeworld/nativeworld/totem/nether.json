@@ -1,0 +1,16 @@
+{
+    "dimensions": [ "minecraft:the_nether" ],
+    "name": {
+        "translate": "dimension.minecraft.the_nether",
+        "fallback": "The Nether",
+        "color": "dark_red"
+    },
+    "model": "nativeworld:item/totem_of_birth/nether",
+    "particle_color": [{
+        "value": "ff0000",
+        "weight": 3
+    }, {
+        "value": "ff4d35",
+        "weight": 1
+    }]
+}

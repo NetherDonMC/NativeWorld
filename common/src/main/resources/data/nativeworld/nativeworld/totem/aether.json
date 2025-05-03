@@ -1,0 +1,27 @@
+{
+    "neoforge:conditions": [{
+        "type": "neoforge:mod_loaded",
+        "modid": "aether"
+    }],
+    "fabric:load_conditions": [{
+        "condition": "fabric:all_mods_loaded",
+        "values": ["aether"]
+    }],
+    "dimensions": [{ "modid": "aether" }],
+    "name": {
+        "translate": "dimension.aether.the_aether",
+        "fallback": "The Aether",
+        "color": "#00ccff"
+    },
+    "model": "nativeworld:item/totem_of_birth/aether",
+    "particle_color": [{
+        "value": "a0ecff",
+        "weight": 5
+    }, {
+        "value": "e4faff",
+        "weight": 1
+    }, {
+        "value": "fffaa7",
+        "weight": 2
+    }]
+}

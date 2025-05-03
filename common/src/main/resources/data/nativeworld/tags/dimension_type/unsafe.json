@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:the_nether",
+    "minecraft:the_end",
+    {
+      "id": "deeperdarker:otherside",
+      "required": false
+    },
+    {
+      "id": "aether:the_aether",
+      "required": false
+    }
+  ]
+}

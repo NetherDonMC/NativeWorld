@@ -1,4 +1,4 @@
-![Logo](src/main/resources/logo.png)
+![Logo](neoforge/src/main/resources/logo.png)
 
 ## About
 A **Minecraft mod** that makes gameplay more challenging using a new **spatial decay** mechanic.

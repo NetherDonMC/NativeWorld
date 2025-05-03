@@ -1,0 +1,16 @@
+{
+    "dimensions": [ "minecraft:the_end" ],
+    "name": {
+        "translate": "dimension.minecraft.the_end",
+        "fallback": "The End",
+        "color": "dark_purple"
+    },
+    "model": "nativeworld:item/totem_of_birth/end",
+    "particle_color": [{
+        "value": "c000ff",
+        "weight": 3
+    }, {
+        "value": "d800ff",
+        "weight": 1
+    }]
+}
