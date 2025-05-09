@@ -164,7 +164,7 @@ public class ClothConfigBuilder
 
     private static <T> T value(ModConfigSpec.ConfigValue<T> configValue, Permission permission)
     {
-        return permission.levelLoaded() ? configValue.get() : configValue.getDefault();
+        return permission.levelLoaded() ? configValue.getRaw() : configValue.getDefault();
     }
 
     private static Component name(ModConfigSpec.ConfigValue<?> value)
